@@ -1,0 +1,143 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #eef2f7;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+    color: #333;
+}
+
+/* Dark mode */
+body.dark {
+    background: #18191a;
+    color: #e4e6eb;
+}
+body.dark .post {
+    background: #242526;
+}
+body.dark .user {
+    color: #2e89ff;
+}
+body.dark .content {
+    color: #e4e6eb;
+}
+body.dark a, body.dark button {
+    color: white;
+}
+body.dark form button {
+    background-color: #e53935;
+}
+body.dark a[href*="/posts/new"] {
+    background-color: #00cec9;
+}
+
+/* Header */
+h1 {
+    color: maroon;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    
+}
+
+/* Toggle button */
+.toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #006aff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Post card */
+.post {
+    background: #ffffff;
+    padding: 20px 25px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    width: 90%;
+    max-width: 650px;
+    transition: transform 0.2s ease;
+}
+.post:hover {
+    transform: translateY(-4px);
+}
+
+/* Content styles */
+.user {
+    font-style: italic;
+    color: #3b5998;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.content {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+    line-height: 1.5;
+}
+
+/* Buttons and links */
+a, button {
+    text-decoration: none;
+    background-color: #006aff;
+    color: white;
+    padding: 8px 16px;
+    margin: 6px 4px 0 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.25s ease;
+}
+a:hover, button:hover {
+    background-color: #004fc1;
+}
+form button {
+    background-color: #ff4c4c;
+}
+form button:hover {
+    background-color: #c0392b;
+}
+form {
+    display: inline;
+}
+a[href*="/posts/new"] {
+    background-color: #00b894;
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+    .post {
+        width: 95%;
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .toggle-btn {
+        padding: 8px 12px;
+    }
+}

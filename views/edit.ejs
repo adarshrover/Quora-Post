@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <style>
+        /* Apply to the whole body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* Paragraphs for id and username */
+p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 8px 0;
+}
+
+/* Style the form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Textarea style */
+textarea#content {
+    width: 100%;
+    max-width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+}
+
+textarea#content:focus {
+    outline: none;
+    border-color: #00b894; /* nice green */
+    box-shadow: 0 0 5px rgba(0,184,148, 0.5);
+}
+
+/* Button style */
+button {
+    background-color: #00b894;
+    border: none;
+    color: white;
+    padding: 12px 28px;
+    margin-top: 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #019875;
+}
+
+/* Link style */
+a[href="/posts"] {
+    display: block;
+    margin-top: 30px;
+    color: #0984e3;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+a[href="/posts"]:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    body {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <h2>Edit your post</h2>
+    <p>Post id : <%= post.id %></p>
+    <p>Post username : <%= post.username %></p>
+
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+        <textarea id="content" rows="10" cols="35" name="content"><%= post.content %></textarea>
+
+        <br> <br>
+        <button>Update</button>
+    </form>
+
+    <br>
+    <a href="/posts"> Back to all posts</a>
+</body>
+</html>
