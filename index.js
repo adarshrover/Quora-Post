@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const path = require('path');
 
 const {v4: uuidv4} = require('uuid');
